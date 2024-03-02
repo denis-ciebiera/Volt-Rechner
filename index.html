@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Einfacher Volt-Rechner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #200320d3;
+            box-shadow: inset 0 0 10px #000000;
+        }
+        .container {
+            text-align: center;
+            background-color: #7a32ff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #cccccc;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:active {
+            transform: scale(0.98); /* Kleine Animation, um den Klick zu simulieren */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Einfacher Volt-Rechner</h2>
+        <input type="number" id="current" placeholder="Stromstärke (Ampere)">
+        <input type="number" id="resistance" placeholder="Widerstand (Ohm)">
+        <button onclick="calculateVoltage()">Berechnen</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function calculateVoltage() {
+            var current = document.getElementById('current').value;
+            var resistance = document.getElementById('resistance').value;
+            var voltage = current * resistance;
+            document.getElementById('result').innerText = 'Spannung: ' + voltage + ' Volt';
+        }
+    </script>
+</body>
+</html>
